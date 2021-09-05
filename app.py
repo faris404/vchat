@@ -37,3 +37,5 @@ def user_join_room(user_id,room_id):
 
 if __name__=="__main__":
    socketio.run(app,debug=True)
+
+# gunicorn --worker-class eventlet -w 1 app:app
