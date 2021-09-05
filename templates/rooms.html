@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>VChat</title>
+   <style>
+      .section{
+         margin:5% 30% 0% 40%;
+      }
+      select,button{
+         margin: 5px;
+         width: 150px;
+         padding: 5px;
+         border: solid rgba(10, 59, 194, 0.377);
+         border-radius: 4px;
+
+         border-width: 1px;
+      }
+      button{
+         width: 70px;
+      }
+   </style>
+   <script>
+      function joinRoom(){
+         console.log('hii');
+         option = document.getElementById('room').value
+         if (option != 'null'){
+            window.location.href = `/room/${option}`;
+         }
+      }
+   </script>
+</head>
+<body>
+   <div class="section">
+      <h1>VChat</h1>
+      <select id="room">
+         <option value="null">Select Room</option>
+         <option value="fe">Front-End</option>
+         <option value="be">Back-End</option>
+         <option value="mb">Mobile</option>
+         <option value="do">DevOps</option>
+      </select>
+      <button onclick="joinRoom()"> Join </button>
+   </div>
+</body>
+</html>
