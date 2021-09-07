@@ -24,7 +24,9 @@ def test_connect():
 
 @socketio.on('disconnect')
 def test_disconnect():
-   emit('user-desc',request.sid,to=user_rooms[request.sid],broadcast=True)
+   if (user_rooms.get(request.sid)):
+      room_det = user_rooms.pop(request.sid)
+      emit('user-desc',request.sid,to=room_det,broadcast=True)
 
 
 @socketio.on('join-room')
